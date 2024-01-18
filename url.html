@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-image: linear-gradient(to right, #fc466b, #3f53fb);
+        }
+
+        input {
+            width: 300px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px;
+        }
+
+        #shortened-url {
+            margin-top: 20px;
+        }
+
+        #head {
+            color: rgba(3, 1, 1, 0.842);
+    
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 149px;
+    font-weight: 690;
+    font-family: 'Times New Roman', Times, serif;
+   display: grid;
+   place-items: center;
+   height: 270px;
+   margin-top: 0.5rem;
+        } 
+
+    @media (max-width: 786px){
+        #head h1#head {
+            font-size: 50px;
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <h1 id="head">URL Shortner</h1>
+    
+    <label for="original-url"><b>Enter URL:</b></label>
+    <input type="text" id="original-url" placeholder="Enter your URL">
+    <button onclick="shortenUrl()">Shorten</button>
+
+    <div id="shortened-url"></div>
+
+    <script>
+        function shortenUrl() {
+            const originalUrl = document.getElementById('original-url').value;
+            
+            // In a real application, you would send the originalUrl to the server for processing.
+            // For simplicity, we'll just display the original URL as the shortened URL in this example.
+            const shortenedUrl = originalUrl;
+
+            document.getElementById('shortened-url').innerHTML = `<p>Shortened URL: <a href="${shortenedUrl}" target="_blank">${shortenedUrl}</a></p>`;
+        }
+    </script>
+</body>
+</html>
